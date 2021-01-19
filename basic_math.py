@@ -69,7 +69,6 @@ def get_mean(number_list):
     mean = sum(number_list)/len(number_list)
     return mean
 
-
 def get_median(number_list):
     """
     주어진 리스트 숫자들의 중간값을 구함.
@@ -90,5 +89,8 @@ def get_median(number_list):
             >>> bm.get_median(number_list2)
             35.5
     """
-    median = sorted(number_list)[len(number_list)//2]
+    if len(number_list) %2 ==1:
+        median = sorted(number_list)[len(number_list)//2]
+    else:
+        median = sum(sorted(number_list)[len(number_list)//2-1:len(number_list)//2+1])/2
     return median
